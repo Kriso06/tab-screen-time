@@ -3,7 +3,7 @@
     "name": "Tab Screen Time",
     "version": "1.0.0",
     "description": "Tracks daily active time spent on websites.",
-    "permissions":["tabs", "storage", "idle"],
+    "permissions":["tabs", "storage", "idle","alarms"],
     "background": {
         "service_worker":"background.js"
     },

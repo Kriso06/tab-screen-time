@@ -1,5 +1,5 @@
-function getTodayKey(){
-    const today=new Date();
+function getTodayKey(date=new Date()){
+    const today=date;
     const year=today.getFullYear();
     const month=String(today.getMonth()+1).padStart(2,"0");
     const day= String(today.getDate()).padStart(2,"0");

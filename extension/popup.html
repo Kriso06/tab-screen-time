@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <title>Tab Screen Time</title>
+        <link rel="stylesheet" href="popup.css"/>
+    </head>
+    <body>
+        <main class="popup">
+            <header>
+                <h1>Today's Usage</h1>
+                <p>Active time by website</p>
+            </header>
+
+            <section id="usage-list" class="usage-list">
+                <p class="empty-state">Loading usage...</p>
+            </section>
+
+            <footer class="footer">
+                <span>Total</span>
+                <strong id="total-time">0m</strong>
+            </footer>
+        </main>
+
+        <script src="utils.js"></script>
+        <script src="popup.js"></script>
+    </body>
+</html>

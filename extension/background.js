@@ -153,4 +153,22 @@ chrome.runtime.onInstalled.addListener(()=>{
     queueOperation(syncTracking);
 });
 
+chrome.runtime.onMessage.addListener((message, sender, sendResponse)=>{
+    if(message.type!=="GET_TODAYS_USAGE") return;
+    queueOperation(async ()=>{
+        await syncTracking();
+        const session=await getCurrentSession();
+        if(session){
+            await flushCurrentSession();
+        }
+        const dateKey=getTodayKey();
+        const storedData=await chrome.storage.local.get(dateKey);
+
+        sendResponse({
+            usage: storedData[dateKey] || {}
+        });
+    });
+    return true;
+});
+
 queueOperation(syncTracking);

@@ -23,6 +23,8 @@ function getDomainFromUrl(url){
 }
 
 function formatDuration(totalSeconds){
+    const seconds=Math.floor(totalSeconds);
+    if(seconds>0 && seconds<60) return "< 1m";
     const minutes=Math.floor(totalSeconds/60);
     const hours=Math.floor(minutes/60);
     const remainingMinutes=minutes%60;
